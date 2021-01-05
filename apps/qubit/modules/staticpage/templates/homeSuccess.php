@@ -24,6 +24,52 @@
 
 <?php end_slot() ?>
 
+
+<section>
+<div class="home-slider">
+  <div class="slide">
+    <a class="slide-img" title="Click to explore" href="/index.php/2019-01" style="background-image: url(/plugins/arInnesPlugin/images/homeSlides/slide1_CamArlenePhotos.jpg); background-size: cover; background-repeat: no-repeat;"></a>
+    <div class="caption">
+      <p class=title>Cam and Arlene Innes Photograph Collection</p>
+    </div>
+  </div>
+  <div class="slide">
+    <a class="slide-img" title="Click to explore" href="/index.php/2019-02" style="background-image: url(/plugins/arInnesPlugin/images/homeSlides/slide2_InnesFamilyVideos.jpg); background-size: cover; background-repeat: no-repeat;"></a>
+    <div class="caption">
+      <p class=title>Innes Family Video Collection</p>
+    </div>
+  </div>
+  <div class="slide">
+    <a class="slide-img" title="Click to explore" href="/index.php/IFDC-V" style="background-image: url(/plugins/arInnesPlugin/images/homeSlides/slide3_VerticalFiles.jpg); background-size: cover; background-repeat: no-repeat;"></a>
+    <div class="caption">
+      <p class=title>Vertical Files</p>
+    </div>
+  </div>
+  <div class="slide">
+    <a class="slide-img" title="Click to explore" href="/index.php/knowledge" style="background-image: url(/plugins/arInnesPlugin/images/homeSlides/slide4_KnowledgeBase.jpg); background-size: cover; background-repeat: no-repeat;"></a>
+    <div class="caption">
+      <p class=title>IFDA Knowledge Base</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<script type="text/javascript" src="/plugins/arInnesPlugin/slick/slick.min.js"></script>
+<script type="text/javascript">
+jQuery(".home-slider").slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  infinite: true,
+  dots: true,
+  arrows: false,
+  fade: true,
+  speed: 600, // default is 300
+  autoplay: true,
+  autoplaySpeed: 5000 // 5s
+});
+</script>
+
 <div class="page">
   <?php echo render_value_html($sf_data->getRaw('content')) ?>
 </div>
