@@ -13,12 +13,6 @@
           <?php endif; ?>
         </div>
 
-        <?php if (isset($item->datesOfExistence)): ?>
-          <div class="datesOfExistence">
-            (<?php echo render_value_inline($item->getDatesOfExistence(array('cultureFallback' => true))) ?>)
-          </div>
-        <?php endif; ?>
-
         <?php if (0 < count($resource->getCreators())): ?>
           <div class="field">
             <?php if (QubitTerm::CORPORATE_BODY_ID == $item->entityTypeId): ?>
