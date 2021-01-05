@@ -12,10 +12,12 @@
               <span class="date-type">(<?php echo render_value_inline($item->type->__toString()) ?>)</span>
             <?php endif; ?>
             <dl>
-              <?php if (isset($item->actor) && null !== $item->type->getRole()): ?>
-                <dt><?php echo render_value_inline($item->type->getRole()) ?></dt>
-                <dd><?php echo render_title($item->actor) ?></dd>
-              <?php endif; ?>
+              <!--
+              <?php #if (isset($item->actor) && null !== $item->type->getRole()): ?>
+                <dt><?php #echo render_value_inline($item->type->getRole()) ?></dt>
+                <dd><?php #echo render_title($item->actor) ?></dd>
+              <?php #endif; ?>
+              -->
               <?php if (null !== $item->getPlace()): ?>
                 <dt><?php echo __('Place') ?></dt>
                 <dd><?php echo render_value_inline($item->getPlace()) ?></dd>
