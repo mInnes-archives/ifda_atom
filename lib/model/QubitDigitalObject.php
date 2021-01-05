@@ -2956,7 +2956,7 @@ class QubitDigitalObject extends BaseDigitalObject
       return false;
     }
 
-    $command = 'ffmpeg -y -i '.$originalPath.' -ar 44100 -c:v libx264 -pix_fmt yuv420p -c:a aac -movflags +faststart '.$newPath.' 2>&1';
+    $command = 'ffmpeg -y -i '.$originalPath.' -c copy '.$newPath.' 2>&1';
     exec($command, $output, $status);
 
     chmod($newPath, 0644);
