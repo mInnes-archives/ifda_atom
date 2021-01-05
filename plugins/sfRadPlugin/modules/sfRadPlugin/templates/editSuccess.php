@@ -265,12 +265,12 @@
           ->help(__('"Give information regarding the existence of any finding aids. Include appropriate administrative and/or intellectual control tools over the material in existence at the time the unit is described, such as card catalogues, box lists, series lists, inventories, indexes, etc." (RAD 1.8B17)')), $resource, array('class' => 'resizable')) ?>
 
         <?php echo render_field($form->relatedUnitsOfDescription
-          ->help(__('For associated material, "If records in another institution are associated with the unit being described by virtue of the fact that they share the same provenance, make a citation to the associated material at the fonds, series or collection level, or for discrete items, indicating its location if known." (RAD 1.8B18). For related material, "Indicate groups of records having some significant relationship by reason of shared responsibility or shared sphere of activity in one or more units of material external to the unit being described." (RAD 1.8B20)'))
-          ->label(__('Associated materials')), $resource, array('class' => 'resizable')) ?>
+          ->help(__('For associated material, "If records in another institution are associated with the unit being described by virtue of the fact that they share the same provenance, make a citation to the associated material at the fonds, series or collection level, or for discrete items, indicating its location if known." (RAD 1.8B18). For related records, "Indicate groups of records having some significant relationship by reason of shared responsibility or shared sphere of activity in one or more units of material external to the unit being described." (RAD 1.8B20)'))
+          ->label(__('Associated material and related records')), $resource, array('class' => 'resizable')) ?>
 
         <div class="form-item">
           <?php echo $form->relatedMaterialDescriptions
-            ->label(__('Related materials'))
+            ->label(__('Related records'))
             ->renderLabel() ?>
           <?php echo $form->relatedMaterialDescriptions->render(array('class' => 'form-autocomplete')) ?>
           <?php if (QubitAcl::check(QubitInformationObject::getRoot(), 'create')): ?>
