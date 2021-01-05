@@ -1,7 +1,7 @@
 <div class="field">
 
   <?php if ($template == 'rad'): ?>
-    <h3><?php echo __('Related materials') ?></h3>
+    <h3><?php echo __('Related records') ?></h3>
   <?php else: ?>
     <h3><?php echo __('Related descriptions') ?></h3>
   <?php endif; ?>
