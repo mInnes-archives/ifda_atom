@@ -1,0 +1,119 @@
+/* 
+ * Homepage Slider
+ */
+  .home-slider {
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: -5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    .slide {
+      position: relative;
+      background: #062A3B;
+      background: rgba(6, 42, 59, 1);  
+    }
+
+    ul.slick-dots {
+        list-style: none;
+        padding: 0;
+        text-align: center; 
+        z-index: 1000;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+    
+    .slick-dots button {
+        background: rgba(6, 42, 59, 0.8);
+        border: none;
+        border-radius: none !important;
+        outline: none !important; 
+        font-size: 0; 
+        height: 7px;
+        width: 35px;
+        line-height: 10px;
+    }
+
+    .slick-dots button:hover {
+        background: @orange;
+        border: 1px solid #062A3B;
+        cursor: pointer;
+    }
+
+    .slick-dots .slick-active button {
+        background: #fff;
+        border: 1px solid #6a6f72;
+    }
+
+    ul.slick-dots li { display: inline-block; margin-left: 5px !important }
+    .slick-list { z-index: 1 }
+  }
+  
+  @media (max-width: 320px) {
+    .home-slider { height: 270px }
+    .home-slider .slide { height: 250px }
+  } 
+  
+  @media all and (min-width: 321px) and (max-width: 979px) { 
+    .home-slider { height: 320px }
+    .home-slider .slide { height: 300px }
+  }
+  
+  @media (max-width: 979px) {  
+    .home-slider {
+      .slide-img { 
+        width: 100%;
+        display: block; 
+        overflow: hidden;
+        height: 300px;
+      }
+  
+      .caption {
+        width: 100%;
+        color: white;
+        -webkit-transition: all 300ms ease;
+        transition: all 300ms ease;
+        text-align: left;
+        height: 100%;
+        background: rgba(0, 12, 25, 0.5);
+      }
+  }
+  }
+  
+  @media (min-width: 980px) { 
+    .home-slider { height: 320px }
+    .home-slider .slide { height: 300px }
+
+    .home-slider { 
+      .slide-img { 
+        width: 100%;
+        display: block;
+        height: 100%;
+        overflow: hidden;
+      }
+      .caption {
+        min-width: 30%;
+        max-width: 30%;
+        color: white;
+        -webkit-transition: all 300ms ease;
+        transition: all 300ms ease;
+        text-align: left;
+        height: 100%;
+      }
+    }
+  }
+  
+  .home-slider { 
+    .title {
+      font-weight: bold;
+      letter-spacing: 0.025em; 
+      font-size: 20px;
+      position: absolute;
+      bottom: 10px;
+      left: 25px;
+      right: 0;
+      background-color: rgba(6, 42, 59, 0.85);
+      padding: 10px;
+      max-width: 100%;
+    }
+  }
