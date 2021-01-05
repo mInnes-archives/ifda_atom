@@ -141,25 +141,15 @@
       <h3><?php echo __('Related entity') ?></h3>
       <div>
 
-        <?php echo link_to(render_title($relatedEntity), array($relatedEntity, 'module' => ('QubitRepository' == $relatedEntity->className) ? 'repository' : 'actor')) ?><?php if (isset($relatedEntity->datesOfExistence)): ?> <span class="note2">(<?php echo render_value_inline($relatedEntity->getDatesOfExistence(array('cultureFallback' => true))) ?>)</span><?php endif; ?>
-
-        <?php echo render_show(__('Identifier of the related entity'), render_value_inline($relatedEntity->descriptionIdentifier)) ?>
-
-        <?php if ($item->type->parentId == QubitTerm::ROOT_ID): ?>
-          <?php echo render_show(__('Category of the relationship'), render_value_inline($item->type)) ?>
-        <?php else: ?>
-          <?php echo render_show(__('Category of the relationship'), render_value_inline($item->type->parent)) ?>
-
-          <?php if ($resource->id != $item->objectId): ?>
-            <?php echo render_show(__('Type of relationship'), link_to(render_title($relatedEntity), array($relatedEntity, 'module' => ('QubitRepository' == $relatedEntity->className) ? 'repository' : 'actor')) .' '. render_value($item->type) .' '. render_value($resource->getAuthorizedFormOfName(array('cultureFallback' => true)))) ?>
-          <?php elseif (0 < count($converseTerms = QubitRelation::getBySubjectOrObjectId($item->type->id, array('typeId' => QubitTerm::CONVERSE_TERM_ID)))): ?>
-            <?php echo render_show(__('Type of relationship'), link_to(render_title($relatedEntity), array($relatedEntity, 'module' => ('QubitRepository' == $relatedEntity->className) ? 'repository' : 'actor')) .' '. render_value($converseTerms[0]->getOpposedObject($item->type)) .' '. render_value($resource->getAuthorizedFormOfName(array('cultureFallback' => true)))) ?>
-          <?php endif; ?>
+        <?php if ($resource->id != $item->objectId): ?>
+          <?php echo link_to(render_title($relatedEntity), array($relatedEntity, 'module' => ('QubitRepository' == $relatedEntity->className) ? 'repository' : 'actor')) .' ('. render_value_inline($item->type) .')' ?>
+        <?php elseif (0 < count($converseTerms = QubitRelation::getBySubjectOrObjectId($item->type->id, array('typeId' => QubitTerm::CONVERSE_TERM_ID)))): ?>
+          <?php echo link_to(render_title($relatedEntity), array($relatedEntity, 'module' => ('QubitRepository' == $relatedEntity->className) ? 'repository' : 'actor')) .' ('. render_value_inline($converseTerms[0]->getOpposedObject($item->type)) .')' ?>
         <?php endif; ?>
+        
+        <?php echo render_show(__('Dates'), render_value_inline(Qubit::renderDateStartEnd($item->date, $item->startDate, $item->endDate))) ?>
 
-        <?php echo render_show(__('Dates of the relationship'), render_value_inline(Qubit::renderDateStartEnd($item->date, $item->startDate, $item->endDate))) ?>
-
-        <?php echo render_show(__('Description of relationship'), render_value_inline($item->description)) ?>
+        <?php echo render_show(__('Description'), render_value_inline($item->description)) ?>
 
       </div>
     </div>
