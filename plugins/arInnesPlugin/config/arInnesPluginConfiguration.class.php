@@ -20,7 +20,7 @@
 class arInnesPluginConfiguration extends sfPluginConfiguration
 {
   public static
-    $summary = 'Theme plugin copy of Dominion renamed for testing.',
+    $summary = 'Innes Family Digital Archive (IFDA) theme plugin, extension of arDominionPlugin.',
     $version = '0.0.1';
 
   public function contextLoadFactories(sfEvent $event)
