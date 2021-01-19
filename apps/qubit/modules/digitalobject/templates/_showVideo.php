@@ -12,7 +12,7 @@
 
   <?php if ($showFlashPlayer): ?>
     <div style="max-width:640px;margin:auto;">
-      <video style="max-width:100%;" preload="metadata" class="mediaelement-player" src="<?php echo public_path($representation->getFullPath()) ?>"></video>
+      <video preload="metadata" class="mediaelement-player" src="<?php echo public_path($representation->getFullPath()) ?>"></video>
     </div>
   <?php else: ?>
     <div style="text-align: center">
