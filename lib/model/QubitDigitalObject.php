@@ -912,6 +912,7 @@ class QubitDigitalObject extends BaseDigitalObject
       'vss' => 'application/vnd.visio',
       'vst' => 'application/vnd.visio',
       'vsw' => 'application/vnd.visio',
+      'vtt' => 'text/vtt',
       'vtu' => 'model/vnd.vtu',
       'vxml' => 'application/voicexml+xml',
       'w3d' => 'application/x-director',
