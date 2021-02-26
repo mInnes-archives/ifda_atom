@@ -2595,7 +2595,7 @@ class QubitDigitalObject extends BaseDigitalObject
   }
 
   /**
-   * Resize an image using the sfThubmnail Plugin.
+   * Resize an image using the sfThumbnail Plugin.
    *
    * @param string $originalImageName
    * @param integer $width
@@ -2772,7 +2772,7 @@ class QubitDigitalObject extends BaseDigitalObject
 
   /*
    * -----------------------------------------------------------------------
-   * VIDEO
+   * Audio
    * -----------------------------------------------------------------------
    */
   public function createAudioDerivative($usageId, $connection = null)
