@@ -1769,7 +1769,30 @@ class QubitDigitalObject extends BaseDigitalObject
     $criteria->add(QubitDigitalObject::PARENT_ID, $this->id);
     $criteria->add(QubitDigitalObject::USAGE_ID, $usageId);
 
-    $result = QubitDigitalObject::getOne($criteria);
+    if ($usageId == QubitTerm::SUBTITLES_ID)
+    {
+      $fileExists = true;
+      $result = array();
+      $i = 0;
+
+      while ($fileExists == true)
+      {
+        $subtitle = QubitDigitalObject::get($criteria)->__get($i, array('defaultValue' => null));
+        if ($subtitle)
+        {
+          $result[] = $subtitle;
+          ++$i;
+        }
+        else
+        {
+          $fileExists = false;
+        }
+      }
+    }
+    else
+    {
+      $result = QubitDigitalObject::getOne($criteria);
+    }
 
     return $result;
   }
